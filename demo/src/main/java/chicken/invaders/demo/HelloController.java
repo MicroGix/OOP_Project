@@ -1,1 +1,0 @@
-package chicken.invaders.demo;
