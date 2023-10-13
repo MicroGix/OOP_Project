@@ -1,4 +1,4 @@
-<div id="header", align="center">
+<div id="header" align="center">
 <!-- PROJECT LOGO -->
    <img src="./assets/logo/logo.png" alt="Logo" width="200" height="200">
 </div>
@@ -53,6 +53,7 @@
 |   1   | Nguyen Hong Son | ITDSIU21117 | soniu03052003@gmail.com | [Son-SDT](https://github.com/Son-SDT) | [Son Son](https://www.facebook.com/nguyenhongson0305outlook) |
 |   2   | Nguyen Nhat Khiem | ITDSIU21091 | nhatkhiem003@gmail.com | [Khim3](https://github.com/Khim3) | [Khiem Nguyen](https://www.facebook.com/khiem.nguyen.042) |
 |   3   | Nguyen Tri Tin | ITDSIU21123 | tinnguyen109@outlook.com | [MicroGix](https://github.com/MicroGix) | [Tin Nguyen](https://www.facebook.com/tinnguyen105/) |
+|   4   | Le Thi Thuy Nga | ITDSIU21123 | |  |  |
 
 
 <!-- INSTALLATION -->
@@ -73,6 +74,7 @@
 | 1     |  | Hong Son  |      25      |
 | 2     |  | Nhat Khiem |      25      |
 | 3     |  | Tri Tin |      25      |
+| 4     |  | Thuy Nga |      25      |
 
 <!-- TOOL USED -->
 # Tool Used 
