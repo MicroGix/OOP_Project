@@ -50,10 +50,10 @@
 
 | Order |         Name          |     ID      |                  Email                  |                       Github account                        |                              Facebook                              |
 | :---: | :-------------------: | :---------: |:---------------------------------------:| :---------------------------------------------------------: | :----------------------------------------------------------------: |
-|   1   | Nguyen Hong Son | ITDSIU21117 | soniu03052003@gmail.com | [Son-SDT](https://github.com/Son-SDT) | [Son Son](https://www.facebook.com/nguyenhongson0305outlook) |
-|   2   | Nguyen Nhat Khiem | ITDSIU21091 | nhatkhiem003@gmail.com | [Khim3](https://github.com/Khim3) | [Khiem Nguyen](https://www.facebook.com/khiem.nguyen.042) |
-|   3   | Nguyen Tri Tin | ITDSIU21123 | tinnguyen109@outlook.com | [MicroGix](https://github.com/MicroGix) | [Tin Nguyen](https://www.facebook.com/tinnguyen105/) |
-|   4   | Le Thi Thuy Nga | ITDSIU21123 | |  |  |
+|   1   | Nguyen Hong Son | ITDSIU21117 |  ITDSIU21117@student.hcmiu.edu.vn | [Son-SDT](https://github.com/Son-SDT) | [Son Son](https://www.facebook.com/nguyenhongson0305outlook) |
+|   2   | Nguyen Nhat Khiem | ITDSIU21091 |  ITDSIU21091@student.hcmiu.edu.vn | [Khim3](https://github.com/Khim3) | [Khiem Nguyen](https://www.facebook.com/khiem.nguyen.042) |
+|   3   | Nguyen Tri Tin | ITDSIU21123 |  ITDSIU21123@student.hcmiu.edu.vn | [MicroGix](https://github.com/MicroGix) | [Tin Nguyen](https://www.facebook.com/tinnguyen105/) |
+|   4   | Le Thi Thuy Nga | ITDSIU21024 | ITDSIU21024@student.hcmiu.edu.vn | [Schrrodinger](https://github.com/Schrrodinger) | [Thuy Nga](https://www.facebook.com/profile.php?id=100032005854236) |
 
 
 <!-- INSTALLATION -->
