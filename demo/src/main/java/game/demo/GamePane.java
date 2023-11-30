@@ -20,26 +20,27 @@ public class GamePane extends Pane {
         this.getChildren().add(this.plane.getShape());
 
         //show chickens
-        chickens = new Chicken[10][6];
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 6; j++) {
-                int x = 1200/10*i+80;
-                int y = j*85+20;
-                chickens[i][j] = new Chicken(x,y,this,plane);
-                this.getChildren().add(chickens[i][j].getShape());
-            }
-        }
-        // start egg
-        Timeline animation = new Timeline();
-        KeyFrame frame = new KeyFrame(Duration.millis(500), e2 -> {
-            int c1i = (int)Math.round(Math.random()*8);
-            int c1j = (int)Math.round(Math.random()*2);
-            if (chickens[c1i][c1j].isAlive())
-                chickens[c1i][c1j].egg();
-        });
-        animation.getKeyFrames().addAll(frame);
-        animation.setCycleCount(Timeline.INDEFINITE);
-        animation.play();
+//        chickens = new Chicken[10][6];
+//        for (int i = 0; i < 10; i++) {
+//            for (int j = 0; j < 6; j++) {
+//                int x = 1200/10*i+80;
+//                int y = j*85+20;
+//                chickens[i][j] = new Chicken(x,y,this,plane);
+//                this.getChildren().add(chickens[i][j].getShape());
+//            }
+//        }
+        chickens = showChicken();
+//        // start egg
+//        Timeline animation = new Timeline();
+//        KeyFrame frame = new KeyFrame(Duration.millis(500), e2 -> {
+//            int c1i = (int)Math.round(Math.random()*8);
+//            int c1j = (int)Math.round(Math.random()*2);
+//            if (chickens[c1i][c1j].isAlive())
+//                chickens[c1i][c1j].egg();
+//        });
+//        animation.getKeyFrames().addAll(frame);
+//        animation.setCycleCount(Timeline.INDEFINITE);
+//        animation.play();
 
         // create and configure score text
         scoreText = new Text("Score: 0");
@@ -50,6 +51,41 @@ public class GamePane extends Pane {
         this.getChildren().add(scoreText);
     }
 
+    public Chicken[][] showChicken(){
+        chickens = new Chicken[10][6];
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 6; j++) {
+                int x = 1200/10*i+80;
+                int y = j*85+20;
+                chickens[i][j] = new Chicken(x,y,this,plane);
+                this.getChildren().add(chickens[i][j].getShape());
+            }
+        }
+        startEgg(chickens);
+//        Timeline animation = new Timeline();
+//        KeyFrame frame = new KeyFrame(Duration.millis(500), e2 -> {
+//            int c1i = (int)Math.round(Math.random()*8);
+//            int c1j = (int)Math.round(Math.random()*2);
+//            if (chickens[c1i][c1j].isAlive())
+//                chickens[c1i][c1j].egg();
+//        });
+//        animation.getKeyFrames().addAll(frame);
+//        animation.setCycleCount(Timeline.INDEFINITE);
+//        animation.play();
+        return chickens;
+    }
+    public void startEgg(Chicken[][] chickens){
+        Timeline animation = new Timeline();
+        KeyFrame frame = new KeyFrame(Duration.millis(500), e2 -> {
+            int c1i = (int)Math.round(Math.random()*8);
+            int c1j = (int)Math.round(Math.random()*2);
+            if (chickens[c1i][c1j].isAlive())
+                chickens[c1i][c1j].egg();
+        });
+        animation.getKeyFrames().addAll(frame);
+        animation.setCycleCount(Timeline.INDEFINITE);
+        animation.play();
+    }
     public Plane getPlane() {
         return this.plane;
     }
