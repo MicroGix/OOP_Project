@@ -37,6 +37,27 @@ public class Chicken extends Item {
         movement.play();
     }
 
+    public Chicken(double x, double y,GamePane pane, Plane plane,String boss) {
+        super("file:src/images/chicken boss.png", x, y);
+        this.alive = true;
+        this.x = x;
+        this.y = y;
+        this.pane = pane;
+        this.plane = plane;
+        total++;
+        // start move
+        double startX = shape.getX()-400;
+        double endX = shape.getX()+400;
+        Timeline movement = new Timeline(new KeyFrame(Duration.millis(25), e -> {
+            shape.setX(shape.getX() + move);
+            xMove = shape.getX() + move;
+            if (shape.getX() >= endX || shape.getX() <= startX)
+                move *= -1;
+        }));
+        movement.setCycleCount(Timeline.INDEFINITE);
+        movement.play();
+    }
+
     public boolean isAlive() {
         return this.alive;
     }
@@ -50,6 +71,10 @@ public class Chicken extends Item {
     }
 
     public void egg() {
-        new Egg(x+40,y+10,pane,plane);
+        new Egg(x+50,y+20,pane,plane);
+    }
+    private double xMove;
+    public void egg(String boss) {
+        new Egg(xMove+40,y+10,pane,plane);
     }
 }
