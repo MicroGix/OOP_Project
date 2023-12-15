@@ -9,6 +9,7 @@ public class Egg extends Item {
 
     public Egg(double x, double y, Pane pane, Plane plane ) {
         super("file:src/images/egg.png", x, y);
+
         shape.setX(x);
         shape.setY(y);
         pane.getChildren().add(1,this.shape);
@@ -22,12 +23,15 @@ public class Egg extends Item {
                     this.shape.getY() <= plane.getShape().getY() + 80 &&
                     this.shape.getX() >= plane.getShape().getX() -60 &&
                     this.shape.getX() <= plane.getShape().getX() + 60) {
-            
-plane.hited();
-                //animation.stop();
+
+                plane.hited();
+                animation.stop();
+
+
+                //animation.getOnFinished();
                 //plane.die();
 
-//                this.shape.setVisible(false);
+               this.shape.setVisible(false);
             }
         });
         animation.getKeyFrames().add(frame);
