@@ -20,16 +20,19 @@ public class Egg extends Item {
                 animation.stop();
             if (this.shape.getY() >= plane.getShape().getY() - 15 &&
                     this.shape.getY() <= plane.getShape().getY() + 80 &&
-                    this.shape.getX() >= plane.getShape().getX() -60 &&
-                    this.shape.getX() <= plane.getShape().getX() + 60) {
+                    this.shape.getX() >= plane.getShape().getX() -40 &&
+                    this.shape.getX() <= plane.getShape().getX() + 40) {
                 animation.stop();
                 plane.die();
                 this.shape.setVisible(false);
             }
         });
         animation.getKeyFrames().add(frame);
+        animation.stop();
+
         animation.setCycleCount(Timeline.INDEFINITE);
         animation.play();
+
     }
 
 }

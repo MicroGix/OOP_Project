@@ -1,16 +1,10 @@
 package game.demo;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.util.ArrayList;
-
 public class Plane extends Item {
     public static int score;
     private GamePane pane;
     private boolean winner;
     private boolean alive;
-
     public Plane(double x, double y, GamePane pane) {
         super("file:src/images/plane.png", x, y);
         this.score = 0;
@@ -63,7 +57,7 @@ public class Plane extends Item {
     public void win() {
         if (this.getScore()==300){
             winner = true;
-            pane.gameOver();
+            //pane.gameOver();
         }
     }
 }

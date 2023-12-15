@@ -155,22 +155,6 @@ public class GamePane extends Pane {
             }
         }
     }
-    public void gameOver() {
-        animation.stop();
-        // show alert
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Game Over");
-        alert.setHeaderText(null);
-        // get the player 's score from the plane
-        int score = plane.getScore();
-
-        // set the content text with player 's score
-        alert.setContentText("You are loser.\nYour score is: " + score);
-        // add event handler to close the application on OK button press
-        alert.setOnHidden(e -> Platform.exit());
-        // show the alert
-        alert.show();
-    }
     public void gameWin(){
         animation.stop();
         // show alert
@@ -187,6 +171,45 @@ public class GamePane extends Pane {
         // show the alert
         alert.show();
     }
+//    public void removePlane() {
+//        // Remove the plane from the children of the GamePane
+//        this.getChildren().remove(plane.getShape());
+//    }
+//}
+
+    public void gameOver() {
+        animation.stop();
+        // Create an alert with INFORMATION type
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Game Over");
+        alert.setHeaderText(null);
+
+        // Get the player's score from the plane
+        int score = plane.getScore();
+
+        // Set the content text with player's score
+        alert.setContentText("You are a loser.\nYour score is: " + score);
+
+        // Add a custom button for a new option (e.g., "Retry")
+        ButtonType retryButton = new ButtonType("Main Menu");
+        alert.getButtonTypes().add(retryButton);
+
+        // Add event handler to close the application on OK button press
+        alert.setOnHidden(e -> {
+            ButtonType result = alert.getResult();
+            if (result == ButtonType.OK) {
+                // Handle OK button action (close the application)
+                Platform.exit();
+            } else if (result == retryButton) {
+                //return new Scene(new GamePane(stage), 1200, 800);
+            }
+        });
+        // Show the alert
+        alert.show();
+    }
+
+
+
     public void removePlane() {
         // Remove the plane from the children of the GamePane
         this.getChildren().remove(plane.getShape());
