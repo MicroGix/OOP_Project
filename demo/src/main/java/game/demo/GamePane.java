@@ -1,0 +1,194 @@
+package game.demo;
+
+import javafx.application.Platform;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.scene.control.Alert;
+import javafx.scene.layout.Pane;
+import javafx.util.Duration;
+import javafx.scene.text.Text;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Dialog;
+import javafx.stage.Stage;
+public class GamePane extends Pane {
+    private final Text scoreText;
+    Chicken[][] chickens;
+    Plane plane;
+    Heart heart;
+    int count;
+    int level;
+    Timeline animation;
+    KeyFrame frame;
+    private final ImageView[] heartImages;
+    GamePane() {
+        // show plane
+        this.plane = new Plane(505,570,this);
+        this.getChildren().add(this.plane.getShape());
+
+        chickens = showChicken();
+
+        // create and configure score text
+        scoreText = new Text("Score: 0");
+        scoreText.setFont(new Font("Consolas", 33));
+        scoreText.setFill(Color.GREEN);
+        scoreText.setX(1150);
+        scoreText.setY(745);
+        this.getChildren().add(scoreText);
+
+        //show heart
+        heart = new Heart(1300, 745); // Initialize the heart variable
+        this.getChildren().add(heart.getShape());
+
+        heartImages = new ImageView[3];
+        for (int i = 0; i < 3; i++) {
+            Image heartImage = new Image("file:src/images/heart_bigsize.png");
+            heartImages[i] = new ImageView(heartImage);
+            heartImages[i].setX(1150 + i * 40);
+            heartImages[i].setY(710);
+            this.getChildren().add(heartImages[i]);
+        }
+    }
+
+    public Chicken[][] showChicken(){
+        level++;
+        chickens = new Chicken[10][6];
+        count = 10*6;
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 6; j++) {
+                int x = 1200/10*i+80;
+                int y = j*85+20;
+                chickens[i][j] = new Chicken(x,y,this,plane);
+                this.getChildren().add(chickens[i][j].getShape());
+            }
+        }
+        startEgg(chickens);
+
+        return chickens;
+    }
+    public Chicken[][] showChickenboss(){
+        level++;
+        chickens = new Chicken[1][1];
+        count = 1;
+        int x = 1200/10*5+80;
+        int y = 85+20;
+        chickens[0][0] = new Chicken(x,y,this,plane,"boss");
+        this.getChildren().add(chickens[0][0].getShape());
+        startEgg(chickens);
+        return chickens;
+    }
+    public void startEgg(Chicken[][] chickens){
+        animation = new Timeline();
+        frame = new KeyFrame(Duration.millis(300), e2 -> {
+            if (level >=3){
+                if (chickens[0][0].isAlive())
+                    chickens[0][0].egg("boss");
+            }else{
+                int c1i = (int)Math.round(Math.random()*8);
+                int c1j = (int)Math.round(Math.random()*2);
+                if (chickens[c1i][c1j].isAlive())
+                    chickens[c1i][c1j].egg();
+            }
+        });
+        animation.getKeyFrames().addAll(frame);
+        animation.setCycleCount(Timeline.INDEFINITE);
+        animation.play();
+    }
+    public Plane getPlane() {
+        return this.plane;
+    }
+
+    public int getColumn(double x) {
+        for (int i = 0; i < chickens.length; i++) {
+            double cx = chickens[i][0].getShape().getX();
+            if ( x == cx-10
+                    || x == cx
+                    || (x > cx
+                    && x < cx + 100)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public Chicken getLastChicken(int c) {
+        if(level>=3){
+            if (this.chickens[0][0].isAlive()){
+                return this.chickens[0][0];
+            }
+        }else{
+            for (int i = chickens[c].length-1; i > -1; i--) {
+                if (this.chickens[c][i].isAlive()){
+                    return this.chickens[c][i];
+                }
+            }}
+        return null;
+    }
+
+
+    public void updateScore() {
+        this.plane.updateScore(); // tinh abstract
+        count--;
+        System.out.println(count);
+        if (count<=0) {
+            if (level>=2){
+                chickens=showChickenboss();
+            }else
+                chickens = showChicken();
+
+        }
+        // update heartscore
+        int heartScore = heart.getHeartScore();
+        heartScore -= 1;
+        // update the score text
+        int score = plane.getScore();
+        scoreText.setText("Score: "+score);
+        // update heart images based on the remaining hearts
+        for (int i = 0; i < heartImages.length; i++) {
+            if (i < heartScore) {
+                heartImages[i].setVisible(true);
+            } else {
+                heartImages[i].setVisible(false);
+            }
+        }
+    }
+    public void gameOver() {
+        animation.stop();
+        // show alert
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Game Over");
+        alert.setHeaderText(null);
+        // get the player 's score from the plane
+        int score = plane.getScore();
+
+        // set the content text with player 's score
+        alert.setContentText("You are loser.\nYour score is: " + score);
+        // add event handler to close the application on OK button press
+        alert.setOnHidden(e -> Platform.exit());
+        // show the alert
+        alert.show();
+    }
+    public void gameWin(){
+        animation.stop();
+        // show alert
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Game Over");
+        alert.setHeaderText(null);
+        // get the player 's score from the plane
+        int score = plane.getScore();
+
+        // set the content text with player 's score
+        alert.setContentText("You are winner.\nYour score is: " + score);
+        // add event handler to close the application on OK button press
+        alert.setOnHidden(e -> Platform.exit());
+        // show the alert
+        alert.show();
+    }
+    public void removePlane() {
+        // Remove the plane from the children of the GamePane
+        this.getChildren().remove(plane.getShape());
+    }
+}
