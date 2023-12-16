@@ -117,11 +117,15 @@ public class GamePane extends Pane {
     public int getColumn(double x) {
         for (int i = 0; i < chickens.length; i++) {
             double cx = chickens[i][0].getShape().getX();
-            if ( x == cx-10
-                    || x == cx
-                    || (x > cx
-                    && x < cx + 100)) {
-                return i;
+            if (level >=3){
+                if (x >= cx - 150 && x <= cx + 150) {
+                    return i;
+                }
+                }else {
+                if (x >= cx - 50 && x <= cx + 50){
+                    return i;
+            }
+
             }
         }
         return -1;
@@ -150,7 +154,7 @@ public class GamePane extends Pane {
         System.out.println(count);
         if (count<=0) {
             if (level>=2){
-                if(level > 30)
+                if(level > 50)
                     youWin();
                 else
                     chickens=showChickenboss();
