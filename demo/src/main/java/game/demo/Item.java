@@ -34,7 +34,7 @@ public class Item {
     public void setY(double y) {
         shape.setY(y);
     }
-// public die trong item
+    // public die trong item
     // chicken, plane ke thua die
 
 }

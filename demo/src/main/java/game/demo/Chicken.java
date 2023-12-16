@@ -75,6 +75,6 @@ public class Chicken extends Item {
     }
     private double xMove;
     public void egg(String boss) {
-        new Egg(xMove+40,y+10,pane,plane);
+        new Egg(xMove+40,y-10,pane,plane);
     }
 }

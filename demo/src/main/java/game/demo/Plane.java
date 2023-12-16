@@ -5,6 +5,7 @@ public class Plane extends Item {
     private GamePane pane;
     private boolean winner;
     private boolean alive;
+
     public Plane(double x, double y, GamePane pane) {
         super("file:src/images/plane.png", x, y);
         this.score = 0;
@@ -34,11 +35,8 @@ public class Plane extends Item {
         return this.score;
     }
 
-    //    public void updateScore() {
-//        score += 5;
-//    }
 
-// shot method
+    // shot method
     public void shot() {
         new Shot(this.getX()+25, this.getY()-25, this.pane);
     }
@@ -48,16 +46,18 @@ public class Plane extends Item {
     public void die() {
         if (alive && !winner) {
             alive = false;
-            pane.getChildren().remove(shape);
-            this.pane.removePlane();
             pane.gameOver();
         }
     }
+    public void hited(){
+        pane.diemtraitim = pane.diemtraitim -1;
+        pane.xoatraitim();
+    }
 
     public void win() {
-        if (this.getScore()==300){
+        if (this.getScore()==1000){
             winner = true;
-            //pane.gameOver();
+            pane.youWin();
         }
     }
 }
