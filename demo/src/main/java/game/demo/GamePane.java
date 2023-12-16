@@ -1,8 +1,10 @@
 package game.demo;
 
+import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
@@ -25,8 +27,9 @@ public class GamePane extends Pane {
     Timeline animation;
     KeyFrame frame;
     private final ImageView[] heartImages;
-    public static int diemtraitim = 3;
+    public int diemtraitim = 3;
     GamePane() {
+        diemtraitim = 3;
         // show plane
         this.plane = new Plane(505,570,this);
         this.getChildren().add(this.plane.getShape());
@@ -57,8 +60,8 @@ public class GamePane extends Pane {
         }
     }
         public void xoatraitim(){
-
-            heartImages[diemtraitim].setVisible(false);
+            if(diemtraitim >= 0 && diemtraitim < 3)
+                heartImages[diemtraitim].setVisible(false);
 
 
         }
@@ -141,14 +144,18 @@ public class GamePane extends Pane {
 
     public void updateScore() {
         this.plane.updateScore(); // tinh abstract
+        int score = plane.getScore();
+        scoreText.setText("Score: "+score);
         count--;
         System.out.println(count);
         if (count<=0) {
             if (level>=2){
-                chickens=showChickenboss();
+                if(level > 30)
+                    youWin();
+                else
+                    chickens=showChickenboss();
             }else
                 chickens = showChicken();
-
         }}
         // update heartscore
 //        public void updateHeart(){
@@ -156,8 +163,7 @@ public class GamePane extends Pane {
 //        if(heartScore > 0){
 //        heartScore -= 1;}
 //        // update the score text
-//        int score = plane.getScore();
-//        scoreText.setText("Score: "+score);
+
 //        // update heart images based on the remaining hearts
 //        for (int i = 0; i < heartImages.length; i++) {
 //            if (i < heartScore) {
@@ -167,38 +173,67 @@ public class GamePane extends Pane {
 //            }
 //        }
 //    }
+    public void youWin(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("You Win");
+        alert.setHeaderText(null);
+
+        // Get the player's score from the plane
+        int score = plane.getScore();
+
+        // Set the content text with player's score
+        alert.setContentText("You win this game.\nYour score is: " + score);
+
+        // Add a custom button for a new option (e.g., "Retry")
+        ButtonType retryButton = new ButtonType("Main Menu");
+        alert.getButtonTypes().add(retryButton);
+
+        // Add event handler to close the application on OK button press
+        alert.setOnHidden(e -> {
+            ButtonType result = alert.getResult();
+            if (result == ButtonType.OK) {
+                // Handle OK button action (close the application)
+                Platform.exit();
+            } else if (result == retryButton) {
+                ChickenInvaders.getInstance().restart();
+            }
+        });
+        // Show the alert
+        alert.show();
+    }
     public void gameOver() {
-        animation.stop();
-        // show alert
+        if(diemtraitim == 0){
+        // Create an alert with INFORMATION type
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Game Over");
         alert.setHeaderText(null);
-        // get the player 's score from the plane
+
+        // Get the player's score from the plane
         int score = plane.getScore();
 
-        // set the content text with player 's score
-        alert.setContentText("You are loser.\nYour score is: " + score);
-        // add event handler to close the application on OK button press
-        alert.setOnHidden(e -> Platform.exit());
-        // show the alert
-        alert.show();
-    }
-    public void gameWin(){
-        animation.stop();
-        // show alert
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Game Over");
-        alert.setHeaderText(null);
-        // get the player 's score from the plane
-        int score = plane.getScore();
+        // Set the content text with player's score
+        alert.setContentText("You are a loser.\nYour score is: " + score);
 
-        // set the content text with player 's score
-        alert.setContentText("You are winner.\nYour score is: " + score);
-        // add event handler to close the application on OK button press
-        alert.setOnHidden(e -> Platform.exit());
-        // show the alert
+        // Add a custom button for a new option (e.g., "Retry")
+        ButtonType retryButton = new ButtonType("Main Menu");
+        alert.getButtonTypes().add(retryButton);
+
+        // Add event handler to close the application on OK button press
+        alert.setOnHidden(e -> {
+            ButtonType result = alert.getResult();
+            if (result == ButtonType.OK) {
+                // Handle OK button action (close the application)
+                Platform.exit();
+            } else if (result == retryButton) {
+                ChickenInvaders.getInstance().restart();
+            }
+        });
+        // Show the alert
         alert.show();
-    }
+    }}
+
+
+
     public void removePlane() {
         // Remove the plane from the children of the GamePane
         this.getChildren().remove(plane.getShape());

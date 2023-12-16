@@ -40,9 +40,6 @@ public class Plane extends Item {
         return this.score;
     }
 
-    //    public void updateScore() {
-//        score += 5;
-//    }
 
     // shot method
     public void shot() {

@@ -1,6 +1,7 @@
 package game.demo;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
@@ -8,15 +9,38 @@ import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import static game.demo.GamePane.diemtraitim;
-
-
-
 public class ChickenInvaders extends Application {
+    public static ChickenInvaders Instance;
+    private Stage primaryStage;
+
+    //singleton
+    // kiem soat ngoai le
+    public static ChickenInvaders getInstance(){
+        if(Instance == null)
+            Instance = new ChickenInvaders();
+        return Instance;
+    }
+
+    public void restart() {
+        Platform.runLater(() -> {
+            Stage stage = new Stage();
+            try {
+                this.primaryStage.close();
+                start(stage); // Gọi lại phương thức start
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    private void setPrimaryStage(Stage stage){
+        primaryStage = stage;
+    }
 
     public void start(Stage stage) {
-
         // intro
+        Instance = this;
+        setPrimaryStage(stage);
         Pane introPane = new Pane();
         Scene scene = new Scene(introPane);
         // background

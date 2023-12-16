@@ -2,12 +2,13 @@ package game.demo;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
 public class Egg extends Item {
 
-    public Egg(double x, double y, Pane pane, Plane plane ) {
+    public Egg(double x, double y, GamePane pane, Plane plane ) {
         super("file:src/images/egg.png", x, y);
 
         shape.setX(x);
@@ -25,7 +26,10 @@ public class Egg extends Item {
                     this.shape.getX() <= plane.getShape().getX() + 60) {
 
                 plane.hited();
+                pane.gameOver();
                 animation.stop();
+
+
 
 
                 //animation.getOnFinished();
