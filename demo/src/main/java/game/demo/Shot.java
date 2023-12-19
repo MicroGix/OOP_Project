@@ -26,13 +26,26 @@ public class Shot extends Item {
                     currentChicken.die();
                     this.getShape().setVisible(false);
                     animation.stop();
+                }
             }
-        }
+//            if (currentChicken != null) {
+//                double shotX = this.getShape().getX() + this.getShape().getFitWidth() / 2;
+//                double shotY = this.getShape().getY();
+//
+//                double chickenX = currentChicken.getShape().getX();
+//                double chickenY = currentChicken.getShape().getY();
+//
+//                if (shotX >= chickenX && shotX <= chickenX + currentChicken.getShape().getFitWidth() &&
+//                        shotY <= chickenY + currentChicken.getShape().getFitHeight()) {
+//                    pane.updateScore();
+//                    currentChicken.die();
+//                    this.getShape().setVisible(false);
+//                    animation.stop();
+//                }
+//            }
         });
         animation.getKeyFrames().add(frame);
         animation.setCycleCount(Timeline.INDEFINITE);
         animation.play();
     }
 }
-
-

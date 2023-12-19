@@ -70,6 +70,7 @@ public class Chicken extends Item {
             plane.win();
     }
 
+
     public void egg() {
         new Egg(x+50,y+20,pane,plane);
     }

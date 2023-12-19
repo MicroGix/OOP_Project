@@ -131,18 +131,23 @@ public class GamePane extends Pane {
     public void updateScore() {
         this.plane.updateScore(); // tinh abstract
         int score = plane.getScore();
-        scoreText.setText("Score: "+score);
+        scoreText.setText("Score: " + score);
         count--;
-        System.out.println(count);
-        if (count<=0) {
-            if (level>=2){
-                if(level > 300)
+
+        if (score >= 1000) {
+            youWin();
+        } else if (count <= 0) {
+            if (level >= 2) {
+                if (level > 300) {
                     youWin();
-                else
-                    chickens=showChickenboss();
-            }else
+                } else {
+                    chickens = showChickenboss();
+                }
+            } else {
                 chickens = showChicken();
-        }}
+            }
+        }
+    }
     public void youWin(){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("You Win");
@@ -171,6 +176,7 @@ public class GamePane extends Pane {
         // Show the alert
         alert.show();
     }
+
     public void gameOver() {
         if(diemtraitim == 0){
             // Create an alert with INFORMATION type
