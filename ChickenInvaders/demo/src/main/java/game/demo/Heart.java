@@ -5,7 +5,7 @@ public class Heart extends Item{
     private GamePane pane;
 
     public Heart(double x, double y, int heartScore) {
-        super("file:src/images/heart_bigsize.png", x, y);
+        super("images/heart_bigsize.png", x, y);
         this.pane = pane;
         this.heartScore = heartScore;
     }

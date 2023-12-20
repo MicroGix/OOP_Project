@@ -9,7 +9,7 @@ import javafx.util.Duration;
 public class Egg extends Item {
 
     public Egg(double x, double y, GamePane pane, Plane plane ) {
-        super("file:src/images/egg.png", x, y);
+        super("images/egg.png", x, y);
 
         shape.setX(x);
         shape.setY(y);
