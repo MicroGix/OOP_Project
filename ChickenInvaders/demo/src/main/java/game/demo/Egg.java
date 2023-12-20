@@ -2,32 +2,40 @@ package game.demo;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-
 public class Egg extends Item {
 
-    public Egg(double x, double y, Pane pane, Plane plane) {
+    public Egg(double x, double y, GamePane pane, Plane plane ) {
         super("file:src/images/egg.png", x, y);
+
         shape.setX(x);
         shape.setY(y);
         pane.getChildren().add(1,this.shape);
         // start move
         Timeline animation = new Timeline();
-        KeyFrame frame = new KeyFrame(Duration.millis(80), e -> {
-            this.shape.setY(this.shape.getY() + 10);
+        KeyFrame frame = new KeyFrame(Duration.millis(20), e -> {
+            this.shape.setY(this.shape.getY() + 3);
             if (this.shape.getY() > pane.getHeight())
                 animation.stop();
             if (this.shape.getY() >= plane.getShape().getY() - 15 &&
                     this.shape.getY() <= plane.getShape().getY() + 80 &&
-                    this.shape.getX() >= plane.getShape().getX() -75 &&
-                    this.shape.getX() <= plane.getShape().getX() + 75) {
+                    this.shape.getX() >= plane.getShape().getX() -60 &&
+                    this.shape.getX() <= plane.getShape().getX() + 60) {
+
+                plane.hited();
+                pane.gameOver();
                 animation.stop();
-                    plane.die();
-                this.shape.setVisible(false);
+
+
+
+
+                //animation.getOnFinished();
+                //plane.die();
+
+               this.shape.setVisible(false);
             }
         });
         animation.getKeyFrames().add(frame);

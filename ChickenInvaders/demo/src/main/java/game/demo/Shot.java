@@ -2,11 +2,9 @@ package game.demo;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.scene.image.Image;
 import javafx.util.Duration;
 
 public class Shot extends Item {
-
     Chicken currentChicken;
     public Shot(double x, double y, GamePane pane) {
         super("file:src/images/shot.png", x, y);
@@ -16,7 +14,7 @@ public class Shot extends Item {
 
         // start move
         Timeline animation = new Timeline();
-        KeyFrame frame = new KeyFrame(Duration.millis(15), e -> {
+        KeyFrame frame = new KeyFrame(Duration.millis(10), e -> {
             if (currentColumn != -1) {
                 Chicken temp = pane.getLastChicken(currentColumn);
                 currentChicken = temp;
@@ -24,11 +22,10 @@ public class Shot extends Item {
             this.getShape().setY(this.getShape().getY() - 10);
             if (currentChicken != null) {
                 if (this.getShape().getY() <= currentChicken.getShape().getY()) {
+                    pane.updateScore();
                     currentChicken.die();
                     this.getShape().setVisible(false);
-                    pane.getChildren().remove(this.getShape());
                     animation.stop();
-                    pane.updateScore();
                 }
             }
         });
@@ -37,5 +34,3 @@ public class Shot extends Item {
         animation.play();
     }
 }
-
-

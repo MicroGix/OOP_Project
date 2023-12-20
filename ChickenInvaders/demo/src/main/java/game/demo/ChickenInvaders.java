@@ -1,19 +1,46 @@
 package game.demo;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javafx.application.Platform;
 
 public class ChickenInvaders extends Application {
+    public static ChickenInvaders Instance;
+    private Stage primaryStage;
+
+    //singleton
+    // kiem soat ngoai le
+    public static ChickenInvaders getInstance(){
+        if(Instance == null)
+            Instance = new ChickenInvaders();
+        return Instance;
+    }
+
+    public void restart() {
+        Platform.runLater(() -> {
+            Stage stage = new Stage();
+            try {
+                this.primaryStage.close();
+                start(stage); // Gọi lại phương thức start
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    private void setPrimaryStage(Stage stage){
+        primaryStage = stage;
+    }
 
     public void start(Stage stage) {
-
         // intro
+        Instance = this;
+        setPrimaryStage(stage);
         Pane introPane = new Pane();
         Scene scene = new Scene(introPane);
         // background
@@ -39,7 +66,7 @@ public class ChickenInvaders extends Application {
         // exit button
         ImageView exit = new ImageView("file:src/images/quit.png");
         exit.setX(450);
-        exit.setY(580 );
+        exit.setY(580);
         exit.setCursor(Cursor.HAND);
         introPane.getChildren().addAll(bg,title,exit,start,credits, howToPlay);
         // how to play
@@ -49,17 +76,17 @@ public class ChickenInvaders extends Application {
             // background
             ImageView bg1 = new ImageView("file:src/images/space.png");
             // title
-            ImageView title1 = new ImageView("file:src/images/how.png");
-            title1.setX(480);
-            title1.setY(50);
+            ImageView title1 = new ImageView("file:src/images/howplay.png");
+            title1.setX(0);
+            title1.setY(0);
             // instructions
             ImageView instructions = new ImageView("file:src/images/howplay.png");
-            instructions.setX(10);
-            instructions.setY(35);
+            instructions.setX(0);
+            instructions.setY(0);
             // back button
             ImageView back = new ImageView("file:src/images/home.png");
-            back.setX(1080);
-            back.setY(700);
+            back.setX(100);
+            back.setY(50);
             back.setCursor(Cursor.HAND);
             howToPlayPane.getChildren().addAll(bg1,title1,back, instructions);
             // back to intro
@@ -73,17 +100,17 @@ public class ChickenInvaders extends Application {
             // background
             ImageView bg1 = new ImageView("file:src/images/space.png");
             // title
-            ImageView title1 = new ImageView("file:src/images/credit.png");
-            title1.setX(480);
+            ImageView title1 = new ImageView("file:src/images/credits.png");
+            title1.setX(400);
             title1.setY(50);
             // credits
             ImageView credit = new ImageView("file:src/images/cdn.png");
-            credit.setX(10);
-            credit.setY(35);
+            credit.setX(0);
+            credit.setY(0);
             // back button
             ImageView back = new ImageView("file:src/images/home.png");
-            back.setX(1080);
-            back.setY(700);
+            back.setX(100);
+            back.setY(50);
             back.setCursor(Cursor.HAND);
             creditsPane.getChildren().addAll(bg1,title1,back, credit);
             // back to intro
@@ -92,70 +119,69 @@ public class ChickenInvaders extends Application {
         });
         // start game
         start.setOnMouseReleased(ie -> {
-            GamePane view1 = new GamePane();
-            view1.getChildren().add(0,bg);
+            GamePane view = new GamePane();
+            view.getChildren().add(0,bg);
             //event
             scene.setOnKeyPressed(e -> {
                 switch (e.getCode()) {
                     case LEFT -> {
-                        if (view1.getPlane().getX() > 50)
-                            view1.getPlane().moveLeft();
+                        if (view.getPlane().getX() > 50)
+                            view.getPlane().moveLeft();
                     }
                     case RIGHT -> {
-                        if (view1.getPlane().getX() < view1.getWidth() - 100)
-                            view1.getPlane().moveRight();
+                        if (view.getPlane().getX() < view.getWidth() - 100)
+                            view.getPlane().moveRight();
                     }
                     case UP -> {
-                        if (view1.getPlane().getY() > 560) {
-                            view1.getPlane().moveUp();
+                        if (view.getPlane().getY() > 560) {
+                            view.getPlane().moveUp();
                         }
                     }
                     case DOWN -> {
-                        if (view1.getPlane().getY() < view1.getHeight() - 110) {
-                            view1.getPlane().moveDown();
+                        if (view.getPlane().getY() < view.getHeight() - 110) {
+                            view.getPlane().moveDown();
                         }
                     }
-                    case SPACE -> view1.getPlane().shot();
+                    case SPACE -> view.getPlane().shot();
                 }
             });
             // Add a mouse moved event listener to the pane
-            view1.setOnMouseMoved(e -> {
+            view.setOnMouseMoved(e -> {
 
                 // Get the mouse coordinates relative to the pane
                 double mouseX = e.getX();
                 double mouseY = e.getY();
 
                 // Calculate the difference between the mouse coordinates and the plane's current coordinates
-                double dx = mouseX - view1.getPlane().getX();
-                double dy = mouseY - view1.getPlane().getY();
+                double dx = mouseX - view.getPlane().getX();
+                double dy = mouseY - view.getPlane().getY();
 
                 // Limit the plane's movement so that it cannot go beyond the rectangle
-                if (view1.getPlane().getX() + dx < 50) {
-                    dx = 50 - view1.getPlane().getX();
-                } else if (view1.getPlane().getX() + dx > view1.getWidth() - 100) {
-                    dx = view1.getWidth() - 100 - view1.getPlane().getX();
+                if (view.getPlane().getX() + dx < 50) {
+                    dx = 50 - view.getPlane().getX();
+                } else if (view.getPlane().getX() + dx > view.getWidth() - 100) {
+                    dx = view.getWidth() - 100 - view.getPlane().getX();
                 }
 
-                if (view1.getPlane().getY() + dy < 560) {
-                    dy = 560 - view1.getPlane().getY();
-                } else if (view1.getPlane().getY() + dy > view1.getHeight() - 110) {
-                    dy = view1.getHeight() - 110 - view1.getPlane().getY();
+                if (view.getPlane().getY() + dy < 560) {
+                    dy = 560 - view.getPlane().getY();
+                } else if (view.getPlane().getY() + dy > view.getHeight() - 110) {
+                    dy = view.getHeight() - 110 - view.getPlane().getY();
                 }
 
                 // Use the difference in coordinates to move the plane in the desired direction
-                view1.getPlane().setX(view1.getPlane().getX() + dx);
-                view1.getPlane().setY(view1.getPlane().getY() + dy);
+                view.getPlane().setX(view.getPlane().getX() + dx);
+                view.getPlane().setY(view.getPlane().getY() + dy);
 
             });
-            scene.setOnMouseClicked(e -> view1.getPlane().shot());
-
-            scene.setRoot(view1);
+            scene.setOnMouseClicked(e -> view.getPlane().shot());
+            scene.setCursor(Cursor.NONE);
+            scene.setRoot(view);
         });
-
-        // pane 2
-
-
-
+        //heart
+        ImageView heart = new ImageView("file:src/images/heart.png");
+        heart.setX(10);
+        heart.setY(200);
         // exit game
         exit.setOnMouseReleased(ie ->{
             Pane opttionPane = new Pane();
@@ -182,7 +208,8 @@ public class ChickenInvaders extends Application {
             option1.setOnMouseReleased(e -> System.exit(1));
 
         });
-
+        //exit game
+        //stage.setOnMouseReleased(e -> stage.close());
         stage.setScene(scene);
         stage.setTitle("Chicken Invaders");
         stage.setFullScreen(false);
@@ -192,6 +219,11 @@ public class ChickenInvaders extends Application {
     }
 
     public static void main(String[] args) {
+
+
+        System.out.println();
+
+
         Application.launch();
     }
 
