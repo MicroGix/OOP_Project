@@ -6,7 +6,6 @@ import javafx.util.Duration;
 
 
 public class Chicken extends Item {
-
     private boolean alive;
     private Timeline animation;
     private double x;
@@ -18,7 +17,7 @@ public class Chicken extends Item {
     private int move = 5;
 
     public Chicken(double x, double y,GamePane pane, Plane plane) {
-        super("file:src/images/normal chicken.png", x, y);
+        super("images/normal chicken.png", x, y);
         this.alive = true;
         this.x = x;
         this.y = y;
@@ -38,7 +37,7 @@ public class Chicken extends Item {
     }
 
     public Chicken(double x, double y,GamePane pane, Plane plane,String boss) {
-        super("file:src/images/chicken boss.png", x, y);
+        super("images/chicken boss.png", x, y);
         this.alive = true;
         this.x = x;
         this.y = y;

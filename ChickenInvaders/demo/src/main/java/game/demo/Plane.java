@@ -12,7 +12,7 @@ public class Plane extends Item {
     private boolean alive;
 
     public Plane(double x, double y, GamePane pane) {
-        super("file:src/images/plane.png", x, y);
+        super("images/plane.png", x, y);
         this.score = 0;
         this.pane = pane;
         winner = false;

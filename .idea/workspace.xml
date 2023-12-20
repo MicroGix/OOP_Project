@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e5e0e27e-bfef-43d5-b663-9e7e05cc58b3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP_Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ChickenInvaders.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/images/cdn.png" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/resources/game/demo/images/cdn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/images/chicken boss.png" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/resources/game/demo/images/chicken boss.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/images/credit.png" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/resources/game/demo/images/credit.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/images/egg.png" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/resources/game/demo/images/egg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/images/heart_bigsize.png" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/resources/game/demo/images/heart_bigsize.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/images/home.png" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/resources/game/demo/images/home.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/images/how.png" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/resources/game/demo/images/how.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/images/howplay.png" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/resources/game/demo/images/howplay.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/images/no.png" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/resources/game/demo/images/no.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/images/normal chicken.png" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/resources/game/demo/images/normal chicken.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/images/plane.png" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/resources/game/demo/images/plane.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/images/play.png" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/resources/game/demo/images/play.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/images/play2.png" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/resources/game/demo/images/play2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/images/quit.png" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/resources/game/demo/images/quit.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/images/quit1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/resources/game/demo/images/quit1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/images/rocket.png" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/resources/game/demo/images/rocket.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/images/shot.png" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/resources/game/demo/images/shot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/images/space.png" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/resources/game/demo/images/space.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/images/title.png" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/resources/game/demo/images/title.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/images/yes.png" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/resources/game/demo/images/yes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/java/game/demo/Chicken.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/java/game/demo/Chicken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/java/game/demo/ChickenInvaders.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/java/game/demo/ChickenInvaders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/java/game/demo/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/java/game/demo/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/java/game/demo/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/java/game/demo/Plane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChickenInvaders/demo/src/main/java/module-info.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2ZnTuLNSQOjwi1Z9avlUxNDc6JS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
+    <option name="sortKey" value="BY_TYPE" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "testing",
+    "last_opened_file_path": "D:/Home/prom_win/java/package/openjfx-21_windows-x64_bin-sdk/javafx-sdk-21/lib",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.keymap"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Home\prom_win\github\OOP_Project\ChickenInvaders\demo\src\main\resources\game\demo" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e5e0e27e-bfef-43d5-b663-9e7e05cc58b3" name="Changes" comment="" />
+      <created>1703057066241</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1703057066241</updated>
+    </task>
+    <servers />
+  </component>
+</project>

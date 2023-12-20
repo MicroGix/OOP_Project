@@ -42,27 +42,27 @@ public class ChickenInvaders extends Application {
         Pane introPane = new Pane();
         Scene scene = new Scene(introPane);
         // background
-        ImageView bg = new ImageView("file:src/images/space.png");
+        ImageView bg = new ImageView(getClass().getResource("images/space.png").toString());
         // title
-        ImageView title = new ImageView("file:src/images/title.png");
+        ImageView title = new ImageView(getClass().getResource("images/title.png").toString());
         title.setX(308);
         title.setY(50);
         // start button
-        ImageView start = new ImageView("file:src/images/play.png");
+        ImageView start = new ImageView(getClass().getResource("images/play.png").toString());
         start.setX(450);
         start.setY(280);
         start.setCursor(Cursor.HAND);
         // how to play button
-        ImageView howToPlay = new ImageView("file:src/images/how.png");
+        ImageView howToPlay = new ImageView(getClass().getResource("images/how.png").toString());
         howToPlay.setX(450);
         howToPlay.setY(380);
         howToPlay.setCursor(Cursor.HAND);
         // credits button
-        ImageView credits = new ImageView("file:src/images/credit.png");
+        ImageView credits = new ImageView(getClass().getResource("images/credit.png").toString());
         credits.setX(450);
         credits.setY(480);
         // exit button
-        ImageView exit = new ImageView("file:src/images/quit.png");
+        ImageView exit = new ImageView(getClass().getResource("images/quit.png").toString());
         exit.setX(450);
         exit.setY(580);
         exit.setCursor(Cursor.HAND);
@@ -72,17 +72,17 @@ public class ChickenInvaders extends Application {
             Pane howToPlayPane = new Pane();
             Scene scene1 = new Scene(howToPlayPane);
             // background
-            ImageView bg1 = new ImageView("file:src/images/space.png");
+            ImageView bg1 = new ImageView(getClass().getResource("images/space.png").toString());
             // title
-            ImageView title1 = new ImageView("file:src/images/howplay.png");
+            ImageView title1 = new ImageView(getClass().getResource("images/howplay.png").toString());
             title1.setX(0);
             title1.setY(0);
             // instructions
-            ImageView instructions = new ImageView("file:src/images/howplay.png");
+            ImageView instructions = new ImageView(getClass().getResource("images/howplay.png").toString());
             instructions.setX(0);
             instructions.setY(0);
             // back button
-            ImageView back = new ImageView("file:src/images/home.png");
+            ImageView back = new ImageView(getClass().getResource("images/home.png").toString());
             back.setX(100);
             back.setY(50);
             back.setCursor(Cursor.HAND);
@@ -96,17 +96,17 @@ public class ChickenInvaders extends Application {
             Pane creditsPane = new Pane();
             Scene scene1 = new Scene(creditsPane);
             // background
-            ImageView bg1 = new ImageView("file:src/images/space.png");
+            ImageView bg1 = new ImageView(getClass().getResource("images/space.png").toString());
             // title
-            ImageView title1 = new ImageView("file:src/images/credits.png");
+            ImageView title1 = new ImageView(getClass().getResource("images/credit.png").toString());
             title1.setX(400);
             title1.setY(50);
             // credits
-            ImageView credit = new ImageView("file:src/images/cdn.png");
+            ImageView credit = new ImageView(getClass().getResource("images/cdn.png").toString());
             credit.setX(0);
             credit.setY(0);
             // back button
-            ImageView back = new ImageView("file:src/images/home.png");
+            ImageView back = new ImageView(getClass().getResource("images/home.png").toString());
             back.setX(100);
             back.setY(50);
             back.setCursor(Cursor.HAND);
@@ -178,6 +178,7 @@ public class ChickenInvaders extends Application {
         });
         //heart
         ImageView heart = new ImageView("file:src/images/heart.png");
+        ImageView back = new ImageView(getClass().getResource("images/home.png").toString());
         heart.setX(10);
         heart.setY(200);
         // exit game
@@ -185,13 +186,13 @@ public class ChickenInvaders extends Application {
             Pane opttionPane = new Pane();
             Scene scene2 = new Scene(opttionPane);
             //background
-            ImageView bg1 = new ImageView("file:src/images/space.png");
+            ImageView bg1 = new ImageView(getClass().getResource("images/space.png").toString());
             // option1
-            ImageView option1 = new ImageView("file:src/images/yes.png");
+            ImageView option1 = new ImageView(getClass().getResource("images/yes.png").toString());
             option1.setX(450);
             option1.setY(280);
             //option 2
-            ImageView option2 = new ImageView("file:src/images/no.png");
+            ImageView option2 = new ImageView(getClass().getResource("images/no.png").toString());
             option2.setX(450);
             option2.setY(450);
             //option2 set up

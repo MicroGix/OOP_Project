@@ -6,7 +6,7 @@ public class Item {
     protected ImageView shape;
 
     public Item(String path, double x, double y) {
-        this.shape = new ImageView(path);
+        this.shape = new ImageView(getClass().getResource(path).toString());
         this.shape.setX(x);
         this.shape.setY(y);
     }
