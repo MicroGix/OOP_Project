@@ -217,12 +217,7 @@ public class ChickenInvaders extends Application {
     }
 
     public static void main(String[] args) {
-
-
-        System.out.println();
-
-
-        Application.launch();
+        launch();
     }
 
 }
