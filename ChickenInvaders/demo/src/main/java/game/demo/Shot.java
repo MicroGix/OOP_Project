@@ -7,7 +7,7 @@ import javafx.util.Duration;
 public class Shot extends Item {
     Chicken currentChicken;
     public Shot(double x, double y, GamePane pane) {
-        super("file:src/images/shot.png", x, y);
+        super("images/shot.png", x, y);
         pane.getChildren().add(1,this.getShape());
 
         int currentColumn = pane.getColumn(x);
