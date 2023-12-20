@@ -13,8 +13,6 @@ public class ChickenInvaders extends Application {
     public static ChickenInvaders Instance;
     private Stage primaryStage;
 
-    //singleton
-    // kiem soat ngoai le
     public static ChickenInvaders getInstance(){
         if(Instance == null)
             Instance = new ChickenInvaders();
