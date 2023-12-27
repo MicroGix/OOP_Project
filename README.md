@@ -58,7 +58,7 @@
 
 <!-- INSTALLATION -->
 ## Installation 
-**Prerequisites**: Make sure that those following dependencies are installed on your machine:
+**Prerequisites**: Make sure that the following dependencies are installed on your machine:
 - Git
 - Java JDK 21
 - JavaFX21
@@ -75,10 +75,10 @@ We are working with this game as our project lab of Object Oriented Programming 
 ## Task Allocation 
 | Order | Task                                  |  Person   | Contribution (%) |
 | :---- |:--------------------------------------| :-------: | :----------: |
-| 1     |  | Hong Son  |      25      |
-| 2     |  | Nhat Khiem |      25      |
-| 3     |  | Tri Tin |      25      |
-| 4     |  | Thuy Nga |      25      |
+| 1     | Set up Plane animation, prepare PowerPoint | Hong Son  |      25      |
+| 2     | Create the initial core structure of the project, develop idea levels, and write a report | Nhat Khiem |      25      |
+| 3     | GitHub repository host, sfx, prepare PowerPoint, convert code from JavaFx to Scene builder | Tri Tin |      25      |
+| 4     | UI design, game player, menu options, add 3 lives into the game and add design pattern, write report | Thuy Nga |      25      |
 
 <!-- TOOL USED -->
 # Tool Used 
