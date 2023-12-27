@@ -58,7 +58,11 @@
 
 <!-- INSTALLATION -->
 ## Installation 
-
+**Prerequisites**: Make sure that those following dependencies are installed on your machine:
+- Git
+- Java JDK 21
+- JavaFX21
+**Install Game**: Navigate to your local game directory and add necessary packages (set up JDK and JavaFX)
 
 <!-- MOTIVATION -->
 ## Motivation 
