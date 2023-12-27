@@ -103,6 +103,8 @@ We are working with this game as our project lab of Object Oriented Programming 
 
 <!-- ACKNOWLEDGMENTS -->
 # Acknowledgments
+We would like to extend our heartfelt gratitude to everyone who contributed to the success of our OOP game project. This journey has been incredibly rewarding, and it wouldn’t have been possible without the contribution of each member.
+
 
 <p align="justify">
 
