@@ -78,11 +78,11 @@
 
 <!-- TOOL USED -->
 # Tool Used 
+- Java 21 
+- Javafx
+- Scene Builder
+- Aesprite
 
-`#0969Java 21`
-`#0970Javafx`
-`#0971Scene Builder`
-`#0972Aesprite`
 
 
 <!-- FEATURES -->
