@@ -1,4 +1,4 @@
-![image](https://github.com/MicroGix/OOP_Project/assets/92284690/7c2ec5f4-ff56-4fd2-9633-1e0d9d0103ec)<div id="header" align="center">
+
 <!-- PROJECT LOGO -->
    <img src="./assets/logo/logo.png" alt="Logo" width="200" height="200">
 </div>
