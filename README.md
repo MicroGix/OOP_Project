@@ -104,6 +104,9 @@ We are working with this game as our project lab of Object Oriented Programming 
 
 <!-- CHALLENGES -->
 # Challenges
+*Working with Existing Code*: It was difficult to understand and develop for the existing codebase, sometimes it was hard to develop new features as all classes and packages are fixed
+*Balancing Difficulty*: Finding the right balance to make the game challenging but not too hard for gamers was a tough task.
+*Using JavaFX Framework*: As we were not familiar with the JavaFX framework, it was challenging to use it effectively.
 
 <!-- ACKNOWLEDGMENTS -->
 # Acknowledgments
