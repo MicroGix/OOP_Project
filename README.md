@@ -99,6 +99,9 @@
 
 <!-- REFERENCES -->
 # References
+* https://github.com/mostafaHegab/Chicken-Invaders
+* https://wallpapercave.com/w/wp7872568
+* https://openjfx.io/#
 
 <p align="right">(<a href="#header">Back to top</a>)</p>
 
