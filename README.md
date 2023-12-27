@@ -78,10 +78,10 @@
 
 <!-- TOOL USED -->
 # Tool Used 
-Java 21 
-Javafx
-Scene Builder
-Aesprite
+### Java 21 
+### Javafx
+### Scene Builder
+### Aesprite
 
 <!-- FEATURES -->
 # Features 
