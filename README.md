@@ -86,6 +86,18 @@
 
 <!-- FEATURES -->
 # Features 
+# Features 
+- About the rules to play
+  - Try to survive as long as you can and eliminate chickens to get the highest score.
+  - The player has 3 lives to sustain throughout the entirety of the game.
+  - You will have 5 points for each chicken you kill and at certain points of score, the speed of spawning chicken along with their speed would increase
+- General
+  - PLAY: start the game
+  - TUTORIAL: introduce instructions on how to play the game
+  - CREDITS: introduce the authors and developers who made this game
+  - QUIT: exit the game
+
+- Design
 
 <!-- CHALLENGES -->
 # Challenges
