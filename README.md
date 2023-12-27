@@ -1,4 +1,4 @@
-
+<div id="header" align="center">
 <!-- PROJECT LOGO -->
    <img src="./assets/logo/logo.png" alt="Logo" width="200" height="200">
 </div>
@@ -85,7 +85,6 @@
 
 
 <!-- FEATURES -->
-# Features 
 # Features 
 - About the rules to play
   - Try to survive as long as you can and eliminate chickens to get the highest score.
