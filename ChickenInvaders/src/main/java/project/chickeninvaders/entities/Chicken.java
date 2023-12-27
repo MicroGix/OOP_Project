@@ -11,7 +11,7 @@ public class Chicken extends Ship {
     }
     public void update() {
         super.update();
-        if (!exploding && !destroyed) y += 10;
+        if (!exploding && !destroyed) y += speed;
         if (y > MainScene.height) destroyed = true;
     }
 }

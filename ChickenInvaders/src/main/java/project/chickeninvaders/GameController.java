@@ -2,11 +2,13 @@ package project.chickeninvaders;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.event.EventHandler;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -36,6 +38,7 @@ public class GameController {
     public static int score;
     private double mouseX;
     public static GraphicsContext gc;
+    public static int liveTicks;
     Ship player;
     List<ShipBullet> bulletContainer;
     List<Chicken> chickenContainer;
@@ -46,15 +49,15 @@ public class GameController {
             new Image(GameController.class.getResource("img/chicken/3.png").toString()),
             new Image(GameController.class.getResource("img/chicken/4.png").toString()),
     };
-    public static final Image explosionImg = new Image(GameController.class.getResource("img/other/explosion.png").toString());
+    public static final Image explosionImg = new Image(GameController.class.getResource("img/other/explosion1.png").toString());
     public static final Image backgroundImg = new Image(GameController.class.getResource("img/other/background.png").toString());
 
     //--Game Start--
-    public void play() throws IOException {
+    public void play() {
         Canvas canvas = new Canvas(MainScene.width, MainScene.height);
         gc = canvas.getGraphicsContext2D();
         Timeline timeline = new Timeline();
-        KeyFrame frame = new KeyFrame(Duration.millis(100), e -> {
+        KeyFrame frame = new KeyFrame(Duration.millis(50), e -> {
             try {
                 if (run(gc)) {
                     timeline.stop();
@@ -72,47 +75,25 @@ public class GameController {
         Scene ingame = new Scene(new StackPane(canvas));
 
         //--Ship movement via key pressed--
-//        ingame.setOnKeyPressed(new EventHandler<KeyEvent>() {
-//            @Override
-//            public void handle(KeyEvent keyEvent) {
-//                switch (keyEvent.getCode()) {
-//                    case K:
-////                        player.moveUP();
-//                        System.out.println("UP");
-//                        break;
-//                    case J:
-////                        player.moveDOWN();
-//                        System.out.println("DOWN");
-//                        break;
-//                    case H:
-////                        player.moveLEFT();
-//                        System.out.println("LEFT");
-//                        break;
-//                    case L:
-////                        player.moveRIGTH();
-//                        System.out.println("RIGHT");
-//                        break;
-//                    case A, S:
-//                        if (bulletContainer.size() < maxShots)
-//                            bulletContainer.add(player.shoot()); //add bullet if current shots array size does not exceed maxShots
-//                        break;
-//                }
-//            }
-//        });
-//        ingame.setOnMouseClicked(e -> {
-//            if (gameOver) {
-//                gameOver = false;
-//                this.play();
-//            }
-//        });
+        ingame.setOnKeyReleased(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                switch (keyEvent.getCode()) {
+                    case A, S:
+                        if (bulletContainer.size() < maxShots)
+                            bulletContainer.add(player.shoot()); //add bullet if current shots array size does not exceed maxShots
+                        break;
+                }
+            }
+        });
 
         //--Ship movement via mouse--
         ingame.setOnMouseMoved(e -> mouseX = e.getX());
         ingame.setCursor(Cursor.CLOSED_HAND);
-        ingame.setOnMouseClicked(e -> {
-            if (bulletContainer.size() < maxShots)
-                bulletContainer.add(player.shoot()); //add bullet if current shots array size does not exceed maxShots
-        });
+//        ingame.setOnMouseClicked(e -> {
+//            if (bulletContainer.size() < maxShots)
+//                bulletContainer.add(player.shoot()); //add bullet if current shots array size does not exceed maxShots
+//        });
 
         setup();
         stage.setScene(ingame);
@@ -129,6 +110,7 @@ public class GameController {
         bulletContainer = new ArrayList<>();
         chickenContainer = new ArrayList<>();
         player = new Ship(MainScene.width / 2, MainScene.height - playerSize, playerSize, playerImg);
+        liveTicks = 6;
         score = 0;
         IntStream.range(0, maxChickens).mapToObj(i -> this.newChicken()).forEach(chickenContainer::add);
         //The IntStream.range() method is used to generate a sequence of integers from 0 to maxChickens - 1.
@@ -150,9 +132,14 @@ public class GameController {
 
         chickenContainer.stream().peek(Ship::update).peek(Ship::draw).forEach(e -> {
             if (player.colide(e) && !player.exploding) {
+                e.explode();
+                liveTicks--;
+            }
+            if (liveTicks == 1) {
                 player.explode();
             }
         });
+
 
         for (int i = bulletContainer.size() - 1; i >= 0; i--) {
             ShipBullet shot = bulletContainer.get(i);
@@ -164,7 +151,7 @@ public class GameController {
             shot.draw();
             for (Chicken chicken : chickenContainer) {
                 if (shot.colide(chicken) && !chicken.exploding) {
-                    score += 5;
+                    score += 2;
                     chicken.explode();
                     shot.toRemove = true;
                 }
@@ -176,7 +163,7 @@ public class GameController {
                 chickenContainer.set(i, newChicken());
             }
         }
+
         return gameOver = player.destroyed;
     }
-
 }

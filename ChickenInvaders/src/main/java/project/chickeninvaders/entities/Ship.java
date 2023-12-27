@@ -14,9 +14,10 @@ public class Ship extends Entity {
     }
 
     public void update() {
-        if (exploding) explosionStep++;
-        int explosionSteps = 11;
-        destroyed = explosionStep > explosionSteps;
+//        if (exploding) explosionStep++;
+//        int explosionSteps = 10;
+//        destroyed = explosionStep > explosionSteps;
+        if (exploding) destroyed=true;
     }
 
     public void draw() {
