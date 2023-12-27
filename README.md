@@ -78,6 +78,7 @@
 
 <!-- TOOL USED -->
 # Tool Used 
+- ![](https://img.shields.io/badge/java-21-blue)
 
 <!-- FEATURES -->
 # Features 
