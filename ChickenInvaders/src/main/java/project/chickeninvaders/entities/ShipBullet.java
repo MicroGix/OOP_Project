@@ -25,13 +25,13 @@ public class ShipBullet {
     }
 
     public void draw() {
-        gc.setFill(Color.valueOf("#aeba89"));
-        if (GameController.score >= 50 && GameController.score <= 70 || GameController.score >= 120) {
-            gc.setFill(Color.valueOf("#aeba89"));
+        gc.setFill(Color.valueOf("#f32236"));
+        if (GameController.score >= 100 && GameController.score <= 200 || GameController.score >= 300) {
+            gc.setFill(Color.valueOf("#3a7ef7"));
             speed = 50;
             gc.fillRect(x - 5, y - 10, size + 10, size + 20);
         } else {
-            gc.fillOval(x, y, size, size);
+            gc.fillRect(x, y, size, size + 5);
         }
     }
 

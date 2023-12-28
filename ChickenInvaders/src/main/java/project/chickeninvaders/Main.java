@@ -5,9 +5,11 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Main extends Application {
@@ -15,7 +17,7 @@ public class Main extends Application {
     public void start(Stage s) throws IOException {
         Stage stage = MainStage.getInstance().loadStage();
         Scene menu = new MainScene("fxml/menu.fxml").loadScene();
-        Image logo = new Image(getClass().getResource("img/other/logo.png").toString());
+        Image logo = new Image(getClass().getResource("img/other/logo.png").toExternalForm());
 
 //        Media sound = new Media(getClass().getResource("music/menu_sound.mp3").toExternalForm());
 //        MediaPlayer mediaPlayer = new MediaPlayer(sound);

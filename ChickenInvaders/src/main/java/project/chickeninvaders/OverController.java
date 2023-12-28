@@ -2,8 +2,10 @@ package project.chickeninvaders;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,7 +18,8 @@ public class OverController extends SceneController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        scoreLabel.setText("Your score is: " + GameController.score);
+        scoreLabel.setText("Your score: " + GameController.score);
+        scoreLabel.setFont(Font.loadFont(getClass().getResource("font/upheavtt.ttf").toExternalForm(), 50));
     }
     Stage stage = MainStage.getInstance().loadStage();
     public void showScore() throws IOException {

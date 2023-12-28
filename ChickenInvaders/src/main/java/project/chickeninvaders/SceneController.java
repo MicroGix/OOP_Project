@@ -7,6 +7,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -115,12 +116,6 @@ public class SceneController extends GameController {
 
     public void switchtoCredit(MouseEvent event) throws IOException {
         MainScene tutor = new MainScene("fxml/credit.fxml");
-        stage.setScene(tutor.loadScene());
-        stage.show();
-    }
-
-    public void switchtoExit(MouseEvent event) throws IOException {
-        MainScene tutor = new MainScene("fxml/exit.fxml");
         stage.setScene(tutor.loadScene());
         stage.show();
     }

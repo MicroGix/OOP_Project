@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
@@ -38,20 +39,20 @@ public class GameController {
     public static int score;
     private double mouseX;
     public static GraphicsContext gc;
-    public static int liveTicks;
+    private int liveTicks;
+    private boolean pauseGame;
     Ship player;
     List<ShipBullet> bulletContainer;
     List<Chicken> chickenContainer;
     public static final Image playerImg = new Image(GameController.class.getResource("img/other/ship.png").toString());
     public static final Image[] chickenImg = {
-            new Image(GameController.class.getResource("img/chicken/1.png").toString()),
-            new Image(GameController.class.getResource("img/chicken/2.png").toString()),
-            new Image(GameController.class.getResource("img/chicken/3.png").toString()),
-            new Image(GameController.class.getResource("img/chicken/4.png").toString()),
+            new Image(GameController.class.getResource("img/chicken/black.png").toString()),
+            new Image(GameController.class.getResource("img/chicken/yellow.png").toString()),
+            new Image(GameController.class.getResource("img/chicken/red.png").toString()),
+            new Image(GameController.class.getResource("img/chicken/blue.png").toString()),
     };
     public static final Image explosionImg = new Image(GameController.class.getResource("img/other/explosion1.png").toString());
-    public static final Image backgroundImg = new Image(GameController.class.getResource("img/other/background.png").toString());
-
+    public static final Image backgroundImg = new Image(GameController.class.getResource("img/other/background3.png").toString());
     //--Game Start--
     public void play() {
         Canvas canvas = new Canvas(MainScene.width, MainScene.height);
@@ -74,26 +75,40 @@ public class GameController {
 
         Scene ingame = new Scene(new StackPane(canvas));
 
-        //--Ship movement via key pressed--
+        //--Ship shoot via key pressed--
         ingame.setOnKeyReleased(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
                 switch (keyEvent.getCode()) {
                     case A, S:
                         if (bulletContainer.size() < maxShots)
-                            bulletContainer.add(player.shoot()); //add bullet if current shots array size does not exceed maxShots
+                            //add bullet if current shots array size does not exceed maxShots
+                            bulletContainer.add(player.shoot());
                         break;
+                    case ESCAPE:
+                        if (!pauseGame) {
+                            pauseGame = true;
+                            timeline.pause();
+                        } else {
+                            pauseGame = false;
+                            timeline.play();
+                        }
                 }
             }
         });
 
+        //--Check if stage is focus or not--
+        stage.focusedProperty().addListener((obs, wasFocused, isNowFocused) -> {
+            if (isNowFocused) {
+                timeline.play();
+            } else {
+                timeline.pause();
+            }
+        });
+
         //--Ship movement via mouse--
+        ingame.setCursor(Cursor.MOVE);
         ingame.setOnMouseMoved(e -> mouseX = e.getX());
-        ingame.setCursor(Cursor.CLOSED_HAND);
-//        ingame.setOnMouseClicked(e -> {
-//            if (bulletContainer.size() < maxShots)
-//                bulletContainer.add(player.shoot()); //add bullet if current shots array size does not exceed maxShots
-//        });
 
         setup();
         stage.setScene(ingame);
@@ -109,7 +124,7 @@ public class GameController {
     public void setup() {
         bulletContainer = new ArrayList<>();
         chickenContainer = new ArrayList<>();
-        player = new Ship(MainScene.width / 2, MainScene.height - playerSize, playerSize, playerImg);
+        player = new Ship(MainScene.width / 2, MainScene.height - playerSize - 10, playerSize, playerImg);
         liveTicks = 6;
         score = 0;
         IntStream.range(0, maxChickens).mapToObj(i -> this.newChicken()).forEach(chickenContainer::add);
@@ -121,10 +136,11 @@ public class GameController {
     //--Run Graphics
     public boolean run(GraphicsContext gc) throws IOException {
         gc.drawImage(backgroundImg, 0, 0, MainScene.width, MainScene.height);
-        gc.setTextAlign(TextAlignment.CENTER);
-        gc.setFont(Font.font(20));
+        gc.setTextAlign(TextAlignment.LEFT);
+        gc.setFont(Font.loadFont(getClass().getResource("font/upheavtt.ttf").toExternalForm(), 20));
         gc.setFill(Color.WHITE);
-        gc.fillText("Score: " + score, 60, 20);
+        gc.fillText("Score: " + score, 30, MainScene.height - 20);
+        gc.fillText("Lives: " + liveTicks/2, 30,MainScene.height - 40);
 
         player.update();
         player.draw();
