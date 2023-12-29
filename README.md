@@ -93,7 +93,9 @@ We are working with this game as our project lab of Object Oriented Programming 
 - About the rules to play
   - Try to survive as long as you can and eliminate chickens to get the highest score.
   - The player has 3 lives to sustain throughout the entirety of the game.
-  - You will have 5 points for each chicken you kill and at certain points of score, the speed of spawning chicken along with their speed would increase
+  - You will earn 2 points for each chicken destroyed, however, if one of them get passed, you will lose 4 points. You lose the game when either your score reaches 0 or you lose all 3 lives.
+ - When reaching to certain points, your bullet will level up, given  faster bullet speed with bigger size.
+ - Use mouse to move and A, S or Mouse click to shoot
 - General
   - PLAY: start the game
   - TUTORIAL: introduce instructions on how to play the game
