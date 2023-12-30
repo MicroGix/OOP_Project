@@ -1,19 +1,17 @@
 package project.chickeninvaders;
 
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
-public class SceneController extends GameController {
+public class SceneController {
     @FXML
     private ImageView playImgView;
     @FXML
@@ -28,7 +26,10 @@ public class SceneController extends GameController {
     private ImageView yesImgView;
     @FXML
     private ImageView noImgView;
-    Stage stage = MainStage.getInstance().loadStage();
+    @FXML
+    private ImageView tutorContent;
+    Stage stage = MStage.getInstance().loadStage();
+
 
     //--Button Animation--
     public void changePlayImg(MouseEvent event) {
@@ -101,21 +102,41 @@ public class SceneController extends GameController {
         }
     }
 
+    // go to next page on tutorial content
+    public void nextPage() {
+        String[] imgPath = {
+                getClass().getResource("img/content/tutorcontent1.png").toString(),
+                getClass().getResource("img/content/tutorcontent2.png").toString(),
+                getClass().getResource("img/content/tutorcontent3.png").toString()
+        };
+        String currentPath = tutorContent.getImage().getUrl().toString();
+
+        try {
+            for (int i = 0; i < imgPath.length; i++) {
+                if (Objects.equals(imgPath[i], currentPath)) {
+                    tutorContent.setImage(new Image(imgPath[i + 1]));
+                }
+            }
+        } catch (ArrayIndexOutOfBoundsException error) {
+            tutorContent.setImage(new Image(imgPath[0]));
+        }
+    }
+
     //--Switch Scene--
     public void switchtoMenu(MouseEvent event) throws IOException {
-        MainScene menu = new MainScene("fxml/menu.fxml");
+        MScene menu = new MScene("fxml/menu.fxml");
         stage.setScene(menu.loadScene());
         stage.show();
     }
 
     public void switchtoTutor(MouseEvent event) throws IOException {
-        MainScene tutor = new MainScene("fxml/tutorial.fxml");
+        MScene tutor = new MScene("fxml/tutorial.fxml");
         stage.setScene(tutor.loadScene());
         stage.show();
     }
 
     public void switchtoCredit(MouseEvent event) throws IOException {
-        MainScene tutor = new MainScene("fxml/credit.fxml");
+        MScene tutor = new MScene("fxml/credit.fxml");
         stage.setScene(tutor.loadScene());
         stage.show();
     }

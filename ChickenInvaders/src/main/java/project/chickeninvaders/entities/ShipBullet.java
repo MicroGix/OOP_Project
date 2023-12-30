@@ -1,15 +1,15 @@
 package project.chickeninvaders.entities;
 
 import javafx.scene.paint.Color;
-import project.chickeninvaders.GameController;
 
-import static project.chickeninvaders.GameController.gc;
+import static project.chickeninvaders.GameController.*;
 
 public class ShipBullet {
-    public boolean toRemove;
+    boolean remove;
     int speed = 10;
     static final int size = 6;
     private int x, y;
+    private int[] range;
 
     public ShipBullet(int x, int y) {
         this.x = x;
@@ -20,18 +20,34 @@ public class ShipBullet {
         return this.y;
     }
 
+    public boolean getStatus() {
+        return remove;
+    }
+
+    public void setStatus(boolean toRemove) {
+        this.remove = toRemove;
+    }
+
     public void update() {
         y -= speed;
     }
 
     public void draw() {
         gc.setFill(Color.valueOf("#f32236"));
-        if (GameController.score >= 100 && GameController.score <= 200 || GameController.score >= 300) {
+        if (score <= 50) {
+            gc.fillOval(x, y, size, size);
+        } else if (score >= 50 && score <= 150) {
             gc.setFill(Color.valueOf("#3a7ef7"));
-            speed = 50;
+            speed = 30;
             gc.fillRect(x - 5, y - 10, size + 10, size + 20);
+        } else if (score >= 150 && score <= 250) {
+            gc.setFill(Color.valueOf("#ffde00"));
+            speed = 50;
+            gc.fillOval(x - 5, y - 10, size + 20, size + 20);
         } else {
-            gc.fillRect(x, y, size, size + 5);
+            gc.setFill(Color.valueOf("#0eb91e"));
+            speed = 70;
+            gc.fillRect(x - 5, y - 10, size + 20, size + 30);
         }
     }
 

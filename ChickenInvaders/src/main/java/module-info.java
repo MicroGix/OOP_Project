@@ -2,9 +2,7 @@ module project.chickeninvaders {
     requires javafx.controls;
     requires javafx.fxml;
 
-    requires org.controlsfx.controls;
-    requires org.kordamp.bootstrapfx.core;
-    requires javafx.media;
+    requires java.desktop;
 
     opens project.chickeninvaders to javafx.fxml;
     exports project.chickeninvaders;

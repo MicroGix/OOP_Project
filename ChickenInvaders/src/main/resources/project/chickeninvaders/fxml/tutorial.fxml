@@ -30,5 +30,18 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
+      <ImageView fx:id="tutorContent" fitHeight="610.0" fitWidth="1005.0" layoutX="98.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/content/tutorcontent1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="nextButton" fitHeight="85.0" fitWidth="130.0" layoutX="943.0" layoutY="614.0" onMouseClicked="#nextPage" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/button/next.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
    </children>
 </AnchorPane>

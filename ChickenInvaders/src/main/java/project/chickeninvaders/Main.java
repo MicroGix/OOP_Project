@@ -3,25 +3,20 @@ package project.chickeninvaders;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
+
 
 public class Main extends Application {
     @Override
     public void start(Stage s) throws IOException {
-        Stage stage = MainStage.getInstance().loadStage();
-        Scene menu = new MainScene("fxml/menu.fxml").loadScene();
+        Stage stage = MStage.getInstance().loadStage();
+        Scene menu = new MScene("fxml/menu.fxml").loadScene();
         Image logo = new Image(getClass().getResource("img/other/logo.png").toExternalForm());
 
-//        Media sound = new Media(getClass().getResource("music/menu_sound.mp3").toExternalForm());
-//        MediaPlayer mediaPlayer = new MediaPlayer(sound);
-//        mediaPlayer.play();
+        SfxController sfx = new SfxController("sfx/menu.wav");
+        sfx.playLoop();
 
         stage.getIcons().add(logo);
         stage.setTitle("ChickenInvaders");
