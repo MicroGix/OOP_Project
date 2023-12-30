@@ -62,6 +62,7 @@
 - Git
 - Java JDK 21
 - JavaFX21
+
 **Install Game**: Navigate to your local game directory and add necessary packages (set up JDK and JavaFX)
 
 <!-- MOTIVATION -->
@@ -93,7 +94,7 @@ We are working with this game as our project lab of Object Oriented Programming 
 - About the rules to play
   - Try to survive as long as you can and eliminate chickens to get the highest score.
   - The player has 3 lives to sustain throughout the entirety of the game.
-  - You will earn 2 points for each chicken destroyed, however, if one of them get passed, you will lose 4 points. You lose the game when either your score reaches 0 or you lose all 3 lives.
+  - You will earn 2 points for each chicken destroyed, however, if one of them get passed, you will lose 4 points. You lose the game when either your score is 0 or you lost all 3 lives.
   - When reaching to certain points, your bullet will level up, given  faster bullet speed with bigger size.
   - Use mouse to move and A, S or Mouse click to shoot
 - General
@@ -103,6 +104,7 @@ We are working with this game as our project lab of Object Oriented Programming 
   - QUIT: exit the game
 
 - Design
+
 
 <!-- CHALLENGES -->
 # Challenges
