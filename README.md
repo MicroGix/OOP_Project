@@ -136,7 +136,7 @@ We are working with this game as our project lab of Object Oriented Programming 
 
 <!-- Badges link-->
 [contributors-shield]: https://img.shields.io/github/contributors/MicroGix/Influence-of-factors-on-students-performence?style=for-the-badge&label=Contributors 
-[contributors-url]: https://github.com/MicroGix/Influence-of-factors-on-students-performence/graphs/contributors 
+[contributors-url]: https://github.com/MicroGix/OOP_Project/graphs/contributors
 [forks-shield]:https://img.shields.io/github/forks/MicroGix/Influence-of-factors-on-students-performence?label=Folks&style=for-the-badge
 [forks-url]: https://github.com/MicroGix/Influence-of-factors-on-students-performence/forks
 [stars-shield]: https://img.shields.io/github/stars/MicroGix/Influence-of-factors-on-students-performence?style=for-the-badge&label=Stars
