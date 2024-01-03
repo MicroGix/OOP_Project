@@ -5,10 +5,11 @@ import project.chickeninvaders.GameController;
 import project.chickeninvaders.MScene;
 
 public class Chicken extends Ship {
-    private int speed = (GameController.playerScore / 10) + 4;
+    private final int speed = (GameController.playerScore / 10) + 4;
     public Chicken(int x, int y, int size, Image img) {
         super(x, y, size, img);
     }
+    @Override
     public void update() {
         super.update();
         if (!exploding && !destroyed) y += speed;

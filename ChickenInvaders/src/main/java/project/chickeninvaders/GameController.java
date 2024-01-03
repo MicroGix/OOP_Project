@@ -163,7 +163,7 @@ public class GameController extends SceneController {
         player.setX((int) mouseX);
 
         chickenContainer.stream().peek(Ship::update).peek(Ship::draw).forEach(e -> {
-            if (player.colide(e) && !player.exploding) {
+            if (player.collide(e) && !player.exploding) {
                 e.explode();
                 liveTicks--;
             }
@@ -182,7 +182,7 @@ public class GameController extends SceneController {
             shot.update();
             shot.draw();
             for (Chicken chicken : chickenContainer) {
-                if (shot.colide(chicken) && !chicken.exploding) {
+                if (shot.collide(chicken) && !chicken.exploding) {
                     playerScore += 2;
                     chicken.explode();
                     shot.setStatus(true);
