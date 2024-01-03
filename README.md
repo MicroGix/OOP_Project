@@ -104,6 +104,8 @@ We are working with this game as our project lab of Object Oriented Programming 
   - QUIT: exit the game
 
 - Design
+![My Image](assets/logo/Design1.png)
+![My Image](assets/logo/Design2.png)
 
 
 <!-- CHALLENGES -->
