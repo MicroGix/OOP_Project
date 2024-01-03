@@ -35,7 +35,7 @@ public class Ship extends Entity<Chicken> {
     }
 
     @Override
-    public boolean colide(Chicken enemy) {
+    public boolean collide(Chicken enemy) {
         int d = distance(x + size / 2, y + size / 2,
                 enemy.x + enemy.size / 2, enemy.y + enemy.size / 2);
         return d < enemy.size / 2 + size / 2;

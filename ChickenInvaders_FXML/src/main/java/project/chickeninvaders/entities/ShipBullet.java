@@ -4,7 +4,7 @@ import javafx.scene.paint.Color;
 
 import static project.chickeninvaders.GameController.*;
 
-public class ShipBullet {
+public class ShipBullet extends Entity<Chicken>{
     boolean remove;
     int speed = 10;
     static final int size = 6;
@@ -12,6 +12,7 @@ public class ShipBullet {
     private int[] range;
 
     public ShipBullet(int x, int y) {
+        super(x, y, size, null);
         this.x = x;
         this.y = y;
     }
@@ -50,8 +51,8 @@ public class ShipBullet {
             gc.fillRect(x - 5, y - 10, size + 20, size + 30);
         }
     }
-
-    public boolean colide(Chicken enemy) {
+    @Override
+    public boolean collide(Chicken enemy) {
         int d = Entity.distance(this.x + size / 2, this.y + size / 2,
                 enemy.x + enemy.size / 2, enemy.y + enemy.size / 2);
         return d < enemy.size / 2 + size / 2;
