@@ -76,10 +76,10 @@ We are working with this game as our project lab of Object Oriented Programming 
 ## Task Allocation 
 | Order | Task                                  |  Person   | Contribution (%) |
 | :---- |:--------------------------------------| :-------: | :----------: |
-| 1     | Set up Plane animation, prepare PowerPoint | Hong Son  |      25      |
-| 2     | Create the initial core structure of the project, develop idea levels, and write a report | Nhat Khiem |      25      |
-| 3     | GitHub repository host, sfx, prepare PowerPoint, convert code from JavaFx to Scene builder | Tri Tin |      25      |
-| 4     | UI design, game player, menu options, add 3 lives into the game and add design pattern, write report | Thuy Nga |      25      |
+| 1     | Set up controller, make SFX, accompany with Nga to create UI design, and prepare PowerPoint. | Hong Son  |      25      |
+| 2     | Create the initial core structure of the project, build entities, and write the report. | Nhat Khiem |      25      |
+| 3     | GitHub repository host, prepare PowerPoint, make game controller, design game mechanic. | Tri Tin |      25      |
+| 4     | Create UI design, add menu options, accompany Khiem to create initial core structure, write the report, and write README. | Thuy Nga |      25      |
 
 <!-- TOOL USED -->
 # Tool Used 
