@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 import project.chickeninvaders.GameController;
 import project.chickeninvaders.MScene;
 
-public class Chicken extends Ship {
+public class Chicken extends Entity{
     private final int speed = (GameController.playerScore / 10) + 4;
     public Chicken(int x, int y, int size, Image img) {
         super(x, y, size, img);

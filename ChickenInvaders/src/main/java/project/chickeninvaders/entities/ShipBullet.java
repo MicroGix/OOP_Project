@@ -1,6 +1,5 @@
 package project.chickeninvaders.entities;
 
-import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
 import static project.chickeninvaders.GameController.*;
@@ -9,20 +8,10 @@ public class ShipBullet extends Entity {
     boolean remove;
     int speed = 10;
     static final int size = 6;
-//    private int  x, y;
 
-//    public ShipBullet(int x, int y) {
-//        this.x = x;
-//        this.y = y;
-//    }
-
-    protected ShipBullet(int x, int y) {
+    public ShipBullet(int x, int y) {
         super(x, y, size, null);
     }
-
-//    public int getY() {
-//        return this.y;
-//    }
 
     public boolean getStatus() {
         return remove;
@@ -56,9 +45,4 @@ public class ShipBullet extends Entity {
             gc.fillRect(x - 5, y - 10, size + 20, size + 30);
         }
     }
-//    public boolean collide(Chicken enemy) {
-//        int d = Entity.distance(this.x + size / 2, this.y + size / 2,
-//                enemy.x + enemy.size / 2, enemy.y + enemy.size / 2);
-//        return d < enemy.size / 2 + size / 2;
-//    }
 }

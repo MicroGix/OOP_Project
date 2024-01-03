@@ -10,7 +10,8 @@ abstract class Entity {
     protected int y;
     protected int size;
     public boolean exploding, destroyed;
-    private final Image explosionImg = new Image(GameController.class.getResource("img/other/explosion1.png").toString());
+    protected int explosionStep = 0;
+    protected final Image explosionImg = new Image(GameController.class.getResource("img/other/explosion1.png").toString());
 
     protected Entity(int x, int y, int size, Image img) {
         this.img = img;
@@ -45,13 +46,17 @@ abstract class Entity {
             int explosionHeight = 128;
             int explosionRow = 3;
             int explosionCol = 3;
-            int explosionStep = 0;
             gc.drawImage(explosionImg, explosionStep % explosionCol * explosionWidth,
                     ((double) explosionStep / explosionRow) * explosionHeight + 1,
                     explosionWidth, explosionHeight, x, y, size, size);
         } else {
             gc.drawImage(img, x, y, size, size);
         }
+    }
+
+    public void explode() {
+        exploding = true;
+        explosionStep = -1;
     }
 
     public boolean collide(Chicken enemy) {

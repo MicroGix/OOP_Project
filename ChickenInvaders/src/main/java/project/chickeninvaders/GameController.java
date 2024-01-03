@@ -19,6 +19,7 @@ import project.chickeninvaders.entities.Chicken;
 import project.chickeninvaders.entities.Ship;
 import project.chickeninvaders.entities.ShipBullet;
 
+import javax.swing.text.html.parser.Entity;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -162,7 +163,7 @@ public class GameController extends SceneController {
         player.draw();
         player.setX((int) mouseX);
 
-        chickenContainer.stream().peek(Ship::update).peek(Ship::draw).forEach(e -> {
+        chickenContainer.stream().peek(Chicken::update).peek(Chicken::draw).forEach(e -> {
             if (player.collide(e) && !player.exploding) {
                 e.explode();
                 liveTicks--;
