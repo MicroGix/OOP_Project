@@ -58,4 +58,14 @@ protected Entity(int x, int y, int size, Image img) {
         exploding = true;
         explosionStep = -1;
     }
+    // check collision
+    public boolean collide(Chicken enemy) {
+        int d = distance(x + size / 2, y + size / 2,
+                enemy.x + enemy.size / 2, enemy.y + enemy.size / 2);
+        return d < enemy.size / 2 + size / 2;
+    }
+    // check distance
+    private int distance(int x1, int y1, int x2, int y2) {
+        return (int) Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
+    }
 }
