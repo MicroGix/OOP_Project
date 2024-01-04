@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import java.io.IOException;
 
 public class MScene {
-//    public static final int width =600, height = 800;
     public static final int width =1200, height = 800;
     private FXMLLoader loader;
     private Parent root;
