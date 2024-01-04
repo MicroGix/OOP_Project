@@ -5,4 +5,6 @@ module project.chickeninvaders {
 
     opens project.chickeninvaders to javafx.fxml;
     exports project.chickeninvaders;
+    exports project.chickeninvaders.entities;
+    opens project.chickeninvaders.entities to javafx.fxml;
 }
