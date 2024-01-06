@@ -10,8 +10,10 @@ public class Main extends Application {
     public void start(Stage s) throws Exception {
         Stage stage = MStage.getInstance().loadStage();
         Scene menu = new MScene("fxml/menu.fxml").loadScene();
-//        Image logo = new Image(getClass().getResource("img/other/logo.png").toExternalForm());
-//        stage.getIcons().add(logo);
+        Image logo = new Image(getClass().getResource("img/other/logo.png").toExternalForm());
+        stage.getIcons().add(logo);
+
+        // Waiting to add SFX
 
         stage.setTitle("Chicken Invaders");
         stage.setResizable(false);
