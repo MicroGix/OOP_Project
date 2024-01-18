@@ -142,9 +142,9 @@ We are working with this game as our project lab of Object Oriented Programming 
 <!-- Badges link-->
 [contributors-shield]: https://img.shields.io/github/contributors/MicroGix/OOP_Project?style=for-the-badge&label=CONTRIBUTORS 
 [contributors-url]: https://github.com/MicroGix/OOP_Project/graphs/contributors
-[forks-shield]:https://img.shields.io/github/forks/MicroGix/Influence-of-factors-on-students-performence?label=Folks&style=for-the-badge
+[forks-shield]:https://img.shields.io/github/forks/MicroGix/OOP_Project?style=for-the-badge&label=FORKS
 [forks-url]: https://github.com/MicroGix/OOP_Project/forks
-[stars-shield]: https://img.shields.io/github/stars/MicroGix/Influence-of-factors-on-students-performence?style=for-the-badge&label=Stars
-[stars-url]: https://github.com/MicroGix/Influence-of-factors-on-students-performence/stargazers
-[issues-shield]: https://img.shields.io/github/issues/MicroGix/Influence-of-factors-on-students-performence?style=for-the-badge&label=Issues
-[issues-url]: https://github.com/MicroGix/Influence-of-factors-on-students-performence/issues
+[stars-shield]: https://img.shields.io/github/stars/MicroGix/OOP_Project?style=for-the-badge&label=STARS
+[stars-url]: https://github.com/MicroGix/OOP_Proeject/stargazers
+[issues-shield]: https://img.shields.io/github/issues/MicroGix/OOP_Project?style=for-the-badge&label=ISSUES
+[issues-url]: https://github.com/MicroGix/OOP_Project/issues
