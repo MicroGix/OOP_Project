@@ -76,35 +76,34 @@ We are working with this game as our project lab of Object Oriented Programming 
 ## Task Allocation 
 | Order | Task                                  |  Person   | Contribution (%) |
 | :---- |:--------------------------------------| :-------: | :----------: |
-| 1     | Set up controller, make SFX, accompany Nga to create UI design and prepare PowerPoint. | Hong Son  |      25      |
-| 2     | Create the initial core structure of the project, build entities, create UML, and write the report. | Nhat Khiem |      25      |
-| 3     | GitHub repository host, prepare PowerPoint, make game controller, design game mechanic. | Tri Tin |      25      |
-| 4     | Create UI design, add menu options, accompany Khiem to create initial core structure, write the report, create UML, and write README. | Thuy Nga |      25      |
+| 1     | Set up controllers, set up SFX, tester, prepare presentation slide | Hong Son  |      25      |
+| 2     | Develop first version, build entities, create UML, prepare report | Nhat Khiem |      25      |
+| 3     | GitHub repository host, design UI, design game mechanic, prepare report | Tri Tin |      25      |
+| 4     | Develop first version, design UI, create UML, prepare report | Thuy Nga |      25      |
 
-<!-- TOOL USED -->
-# Tool Used 
-- Java 21 
+<!-- SPECIFICATIONS -->
+# Specifications 
+- JDK 21 
 - Javafx
 - Scene Builder
 - Aesprite
-
+- Apache Maven
 
 <!-- FEATURES -->
 # Features 
-- About the rules to play
-  - Try to survive as long as you can and eliminate chickens to get the highest score.
-  - The player has 3 lives to sustain throughout the entirety of the game.
-  - You will earn 2 points for each chicken destroyed, however, if one of them get passed, you will lose 4 points. You lose the game when either your score is 0 or you lost all 3 lives.
-  - When reaching to certain points, your bullet will level up, given  faster bullet speed with bigger size.
-  - Use mouse to move and A, S or Mouse click to shoot
-- General
-  - PLAY: start the game
+- Tutorials:
+  - Try to survive as long as you can and eliminate chickens to get the highest score
+  - You only have 3 lives to sustain throughout the entirety of the game
+  - For each chicken get destroyed you will earn 2 points, however, if one of them get passed, you will lose 4 points. You lose the game when either your score is 0 or you lost all 3 lives
+  - When reaching to certain points, your bullet will level up with bigger and faster bullet
+  - Use mouse to move; A, S or Mouse click to shoot
+- General:
+  - START: start the game
   - TUTORIAL: introduce instructions on how to play the game
   - CREDITS: introduce the authors and developers who made this game
-  - QUIT: exit the game
+  - EXIT: exit the game
 
 - Design
-  
 ![My Image](assets/logo/Design1.png)
 ![My Image](assets/logo/Design2.png)
 
@@ -124,7 +123,6 @@ We are working with this game as our project lab of Object Oriented Programming 
 > [!IMPORTANT]
 > This project utilizes several open-source tools, OpenAI, and libraries, and we extend our gratitude to the developers and maintainers of these resources. Your work has been vital in bringing our game to life.
 
-
 <p align="justify">
 
 </p>
@@ -135,7 +133,6 @@ We are working with this game as our project lab of Object Oriented Programming 
 * https://wallpapercave.com/w/wp7872568
 * https://openjfx.io/#
 * https://www.youtube.com/@gasparcoding
-  
 
 <p align="right">(<a href="#header">Back to top</a>)</p>
 
