@@ -17,7 +17,7 @@
 
 <!-- Welcome line -->
 <p align="center">
-  Welcome to our repository  
+  This repository is home to an exciting Object-Oriented Programming (OOP) project, the classic game, Chicken Invaders, using Java.
 </p>
 
 <!-- TABLE OF CONTENTS -->
