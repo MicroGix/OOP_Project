@@ -13,7 +13,8 @@ public class Main extends Application {
         Image logo = new Image(getClass().getResource("img/other/logo.png").toExternalForm());
         stage.getIcons().add(logo);
 
-        // Waiting to add SFX
+        SfxController sfx = new SfxController("sfx/menu.wav");
+        sfx.playLoop();
 
         stage.setTitle("Chicken Invaders");
         stage.setResizable(false);

@@ -58,8 +58,8 @@ public class GameController extends SceneController{
             try {
                 if (run(gc)) {
                     timeline.stop();
-//                    OverController oc = new OverController();
-//                    oc.showScore();
+                    OverController oc = new OverController();
+                    oc.showScore();
                 }
             } catch (IOException ex) {
                 throw new RuntimeException(ex);

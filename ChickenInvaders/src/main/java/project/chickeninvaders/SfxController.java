@@ -6,7 +6,7 @@ import java.io.InputStream;
 
 
 public class SfxController {
-    private final Clip clip;
+    private Clip clip;
     public SfxController(String path) {
         try {
             InputStream filepath = SfxController.class.getResource(path).openStream();
@@ -26,6 +26,9 @@ public class SfxController {
     }
     public void playLoop() {
         clip.loop(Clip.LOOP_CONTINUOUSLY);
+    }
+    public void stop() {
+        clip.stop();
     }
     public void adjustVolume(float n) {
         FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN) ;
